@@ -38,9 +38,13 @@ class FamilyStructure:
         self._members.append(member)
         return None
 
-    def delete_member(self, id):
+    def delete_member(self, id): # have a tutor walk through how to check this and make sure it works alright
         # fill this method and update the return
         #for loop to find specific family member id to remove
+        for member in self._members:
+            if member['id'] != int(id):
+                return member
+            return None
         pass
 
     

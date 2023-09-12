@@ -47,12 +47,10 @@ def create_new_member():
     jackson_family.add_member(member)
     return f"{member['first_name']} {member['last_name']} has been successfully added.", 200
 
-@app.route('/member', methods=['DELETE'])
+@app.route('/member', methods=['DELETE']) # have a tutor walk through how to check this and make sure it works alright
 def delete_one_family_member(member_id):
-    pass
-
-
-
+    member = jackson_family.delete_member(member_id)
+    return jsonify(member), 200
 
 # this only runs if `$ python src/app.py` is executed
 if __name__ == '__main__':
