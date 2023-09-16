@@ -50,7 +50,9 @@ def create_new_member():
 @app.route('/member', methods=['DELETE']) # have a tutor walk through how to check this and make sure it works alright
 def delete_one_family_member(member_id):
     member = jackson_family.delete_member(member_id)
-    return jsonify(member), 200
+    if member is True:
+        return jsonify(member), 200
+    return jsonify("Member not found."), 200
 
 # this only runs if `$ python src/app.py` is executed
 if __name__ == '__main__':

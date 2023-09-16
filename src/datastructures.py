@@ -42,9 +42,9 @@ class FamilyStructure:
         # fill this method and update the return
         #for loop to find specific family member id to remove
         for member in self._members:
-            if member['id'] != int(id):
-                return member
-            return None
-        pass
+            if member['id'] == id:
+                self._members.remove(member)
+                return True
+            return False
 
     
