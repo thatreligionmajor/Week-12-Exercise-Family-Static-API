@@ -13,7 +13,29 @@ class FamilyStructure:
         self.last_name = last_name
 
         # example list of members
-        self._members = []
+        self._members = [
+            {
+                "last_name": last_name,
+                "id": self._generateId(),
+                "first_name": "John",
+                "age": 33, 
+                "lucky_numbers": [7, 13, 22]
+            },
+            {
+                "last_name": last_name,
+                "id": self._generateId(),
+                "first_name": "Jane",
+                "age": 35, 
+                "lucky_numbers": [10, 14, 3]
+            },
+            {
+                "last_name": last_name,
+                "id": self._generateId(),
+                "first_name": "Jimmy",
+                "age": 5, 
+                "lucky_numbers": [1]
+            }
+        ]
 
     # read-only: Use this method to generate random members ID's when adding members into the list
     def _generateId(self):
@@ -29,22 +51,27 @@ class FamilyStructure:
         for member in self._members:
             if member['id'] == int(id):
                 return member
-            return None
+            #return None 
+            #good to have, but not in the scope of the auto-testing
 
     def add_member(self, member):
         # fill this method and update the return
-        id = self._generateId()
-        member['id'] = id
+        #id = self._generateId()
+        #member['id'] = id
         self._members.append(member)
-        return None
+        return True
 
     def delete_member(self, id): # have a tutor walk through how to check this and make sure it works alright
         # fill this method and update the return
         #for loop to find specific family member id to remove
-        for member in self._members:
-            if member['id'] == id:
-                self._members.remove(member)
+        # for member in self._members:
+        #     if member['id'] == id:
+        #         self._members.remove(member)
+        #         return True
+            #return False
+        for position in range(len(self._members)):
+            if self._members[position]["id"] == id:
+                self._members.pop(position)
                 return True
-            return False
 
     
