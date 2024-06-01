@@ -47,7 +47,7 @@ class FamilyStructure:
     
     def get_member(self, id):
         # fill this method and update the return
-        # need a for loop to retreive a specific family member id to display
+        # need a for loop to retrieve a specific family member id to display
         for member in self._members:
             if member['id'] == int(id):
                 return member
@@ -64,11 +64,6 @@ class FamilyStructure:
     def delete_member(self, id): # have a tutor walk through how to check this and make sure it works alright
         # fill this method and update the return
         #for loop to find specific family member id to remove
-        # for member in self._members:
-        #     if member['id'] == id:
-        #         self._members.remove(member)
-        #         return True
-            #return False
         for position in range(len(self._members)):
             if self._members[position]["id"] == id:
                 self._members.pop(position)
